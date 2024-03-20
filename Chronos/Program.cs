@@ -1,12 +1,19 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Chronos
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+
+        Stopwatch crono1 = new Stopwatch();
+
+        crono1.Start();
+
+        Thread.Sleep(600);
         }
     }
 }
