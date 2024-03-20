@@ -18,7 +18,17 @@ namespace MyGame
                 Console.WriteLine("O número de inimigos especificado não é válido.");
                 return;
             }
-            
+
+                Enemy[] enemies = new Enemy[numEnemies];
+
+            for (int i = 0; i < numEnemies; i++)
+            {
+                Console.Write($"Nome do inimigo {i + 1}: ");
+                string name = Console.ReadLine();
+
+                enemies[i] = new Enemy(name);
+            }
+
         }
     }
 }
