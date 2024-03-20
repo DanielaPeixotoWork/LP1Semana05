@@ -2,12 +2,17 @@
 
 namespace MyGame
 {
+    public enum PowerUp
+    {
+        Health,
+        Shield
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-
-        if (args.Length == 0)
+            if (args.Length == 0)
             {
                 Console.WriteLine("Digite o número de inimigos");
                 return;
@@ -19,7 +24,7 @@ namespace MyGame
                 return;
             }
 
-                Enemy[] enemies = new Enemy[numEnemies];
+            Enemy[] enemies = new Enemy[numEnemies];
 
             for (int i = 0; i < numEnemies; i++)
             {
@@ -33,7 +38,6 @@ namespace MyGame
             {
                 Console.WriteLine($"{enemy.GetName()} {enemy.GetHealth()} {enemy.GetShield()}");
             }   
-            
         }
     }
 }
