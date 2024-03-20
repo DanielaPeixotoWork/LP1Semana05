@@ -2,9 +2,16 @@ namespace MyGame
 {
     public class Enemy
     {
+        private static int totalPowerUps = 0;
+
         private string name;
         private int health;
         private float shield;
+
+        static Enemy()
+        {
+            totalPowerUps = 0;
+        }
 
         public Enemy(string name)
         {
@@ -28,6 +35,11 @@ namespace MyGame
             return shield;
         }
 
+        public static int GetTotalPowerUps()
+        {
+            return totalPowerUps;
+        }
+
         public void SetName(string name)
         {
             this.name = name.Length > 8 ? name.Substring(0, 8) : name;
@@ -46,7 +58,6 @@ namespace MyGame
             }
         }
 
-        // Método para pegar um PowerUp
         public void PickupPowerUp(PowerUp powerUp, float value)
         {
             if (powerUp == PowerUp.Health)
@@ -61,6 +72,8 @@ namespace MyGame
                 if (shield > 100)
                     shield = 100;
             }
+
+            totalPowerUps++;
         }
     }
 }
