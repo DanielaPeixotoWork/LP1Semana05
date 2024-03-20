@@ -6,7 +6,7 @@ namespace RanDice
     {
         static void Main(string[] args)
         {
-            
+
         if (args.Length < 2)
         {
             Console.WriteLine("Uso: dotnet run --project RanDice -- <número de dados> <semente>");
@@ -19,6 +19,15 @@ namespace RanDice
             return;
         }
 
+        Random random = new Random(s);
+        int sum = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            sum += random.Next(1, 7);
+        }
+
+        Console.WriteLine(sum);
         }
     }
 }
