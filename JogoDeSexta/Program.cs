@@ -24,8 +24,19 @@ namespace JogoDeSexta
             enemies = new Enemy[numRooms];
         }
 
-    }
-    
+           public void SetEnemyInRoom(int roomIndex, Enemy enemy)
+        {
+            if (roomIndex >= 0 && roomIndex < numRooms)
+            {
+                enemies[roomIndex] = enemy;
+            }
+            else
+            {
+                Console.WriteLine($"Room index {roomIndex} is out of bounds.");
+            }
+        }
+        
+
     class Program
     {
          private static void Main()
