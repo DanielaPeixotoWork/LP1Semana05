@@ -11,6 +11,21 @@ namespace JogoDeSexta
         Nightmare
     }
 
+    public class Level
+    {
+        private readonly int numRooms;
+        private readonly Toughness difficulty;
+        private readonly Enemy[] enemies;
+
+        public Level(int numRooms, Toughness difficulty)
+        {
+            this.numRooms = numRooms;
+            this.difficulty = difficulty;
+            enemies = new Enemy[numRooms];
+        }
+
+    }
+    
     class Program
     {
          private static void Main()
