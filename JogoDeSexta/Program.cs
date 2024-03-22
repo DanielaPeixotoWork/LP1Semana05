@@ -57,7 +57,18 @@ namespace JogoDeSexta
             return count;
         }
     
-
+        public void PrintEnemies()
+        {
+            for (int i = 0; i < numRooms; i++)
+            {
+                if (enemies[i] != null)
+                {
+                    Console.WriteLine($"Room {i}: {enemies[i].Name}");
+                }
+            }
+        }
+    }
+    
     class Program
     {
          private static void Main()
