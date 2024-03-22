@@ -35,7 +35,28 @@ namespace JogoDeSexta
                 Console.WriteLine($"Room index {roomIndex} is out of bounds.");
             }
         }
-        
+
+           public Toughness GetToughness()
+        {
+            return difficulty;
+        }
+
+        public int GetNumRooms()
+        {
+            return numRooms;
+        }
+
+        public int GetNumEnemies()
+        {
+            int count = 0;
+            foreach (var enemy in enemies)
+            {
+                if (enemy != null)
+                    count++;
+            }
+            return count;
+        }
+    
 
     class Program
     {
